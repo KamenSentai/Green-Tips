@@ -9,6 +9,6 @@ define('IMAGES_URL',       THEME_URL  . '/assets/images'  );
 define('FAVICONS_URL',     THEME_URL  . '/assets/favicons');
 define('ADMIN_IMAGES_URL', IMAGES_URL . '/admin'          );
 
-foreach(glob(THEME_PATH . '/includes/*.php') as $file ) {
+foreach (glob(THEME_PATH . '/includes/*.php') as $file ) {
     include_once $file;
 }

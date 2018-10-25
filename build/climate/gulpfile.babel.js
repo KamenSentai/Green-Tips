@@ -1,4 +1,4 @@
-// Imports
+// Imports plugins
 
 import gulp            from 'gulp'
 import gulpLoadPlugins from 'gulp-load-plugins'
@@ -17,15 +17,48 @@ const $ = gulpLoadPlugins()
 
 browserSync.create()
 
-// Variables
+// Set bases
 
-const path    = process.cwd()
-const folders = path.split('/')
-const theme   = folders[folders.length - 1]
+const server  = 'htdocs'
+const project = 'wordpress-climate'
+
+// Build paths
+
+const folders = process.cwd().split('/')
+const theme   = `${folders[folders.length - 1]}/`
+
+let root = '/'
+let local = ''
+
+const buildRoot = () => {
+  for (const folder of folders) {
+    if (folder.length != 0) {
+      root += `${folder}/`
+      if (folder == project) break
+    }
+  }
+}
+
+const buildLocal = () => {
+  let index = 0
+  for (const folder of folders) {
+    if (folder == server) {
+      index = folders.indexOf(server)
+      for (let i = index + 1 ; i < folders.length ; i++) {
+        if (folders[i] != project) local += `${folders[i]}/`
+        else break
+      }
+      break
+    }
+  }
+}
+
+buildRoot()
+buildLocal()
 
 const config = {
-  src: 'sources',
-  thm: `../../public/wp-content/themes/${theme}`
+  src: 'sources/',
+  thm: `${root}public/wp-content/themes/${theme}`
 }
 
 const message = {
@@ -47,17 +80,18 @@ const message = {
 
 gulp.task('server', ['root', 'styles', 'scripts', 'assets', 'templates'], () => {
   browserSync.init({
-    server: config.dist
+    proxy   : `http://localhost/${local}${project}/public/`,
+    browser : 'Google Chrome'
   })
   gulp.watch([
     '!./gulpfile.babel.js',
     '!./*.+(html|php)',
     './*.*'
   ], ['root'])
-  gulp.watch(`${config.src}/assets/**/*.*`, ['assets'])
+  gulp.watch(`${config.src}assets/**/*.*`, ['assets'])
   gulp.watch([
-    `${config.src}/scss/**/*.scss`,
-    `${config.src}/scss/*.scss`
+    `${config.src}scss/**/*.scss`,
+    `${config.src}scss/*.scss`
   ], ['styles'])
   gulp.watch([
     '*.+(html|php)',
@@ -79,7 +113,7 @@ gulp.task('root', () => {
       message : message.error,
       sound   : 'beep'
     }))
-    .pipe(gulp.dest(`${config.thm}/`))
+    .pipe(gulp.dest(`${config.thm}`))
     .pipe(browserSync.stream())
     .pipe($.notify({
       title   : 'Move root',
@@ -91,14 +125,14 @@ gulp.task('root', () => {
 // Assets
 
 gulp.task('assets', () => {
-  return gulp.src(`${config.src}/assets/**/*.*`)
+  return gulp.src(`${config.src}assets/**/*.*`)
     .pipe($.plumber())
     .on('error', $.notify.onError({
       title   : 'Move assets',
       message : message.error,
       sound   : 'beep'
     }))
-    .pipe(gulp.dest(`${config.thm}/assets/`))
+    .pipe(gulp.dest(`${config.thm}assets/`))
     .pipe(browserSync.stream())
     .pipe($.notify({
       title   : 'Move assets',
@@ -110,7 +144,7 @@ gulp.task('assets', () => {
 // Styles
 
 gulp.task('styles', () => {
-  return gulp.src(`${config.src}/scss/app.scss`)
+  return gulp.src(`${config.src}scss/app.scss`)
     .pipe($.plumber())
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.sass())
@@ -124,7 +158,7 @@ gulp.task('styles', () => {
       cascade: false
     }))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest(`${config.thm}/styles/`))
+    .pipe(gulp.dest(`${config.thm}styles/`))
     .pipe(browserSync.stream())
     .pipe($.notify({
       title   : 'SASS',
@@ -149,7 +183,7 @@ const bundle = () => {
     .pipe(buffer())
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest(`${config.thm}/scripts/`))
+    .pipe(gulp.dest(`${config.thm}scripts/`))
     .pipe(browserSync.stream())
     .pipe($.notify({
       title   : 'Scripts',
@@ -160,9 +194,9 @@ const bundle = () => {
 
 gulp.task('scripts', () => {
   bundler = browserify({
-    entries : `${config.src}/js/app.js`,
+    entries : `${config.src}js/app.js`,
     debug   : true,
-    paths   : ['./node_modules', `${config.src}/js/`]
+    paths   : ['./node_modules', `${config.src}js/`]
   }).transform(babelify)
   bundler.plugin(watchify)
   bundler.on('update', bundle)
@@ -182,7 +216,7 @@ gulp.task('templates', () => {
       message : message.error,
       sound   : 'beep'
     }))
-    .pipe(gulp.dest(`${config.thm}/`))
+    .pipe(gulp.dest(`${config.thm}`))
     .pipe(browserSync.stream())
     .pipe($.notify({
       title   : 'Move pages',
@@ -200,14 +234,14 @@ gulp.task('templates', () => {
 // CSS
 
 gulp.task('minCss', () => {
-  return gulp.src(`${config.thm}/styles/app.css`)
+  return gulp.src(`${config.thm}styles/app.css`)
     .pipe($.cssnano())
     .on('error', $.notify.onError({
       title   : 'Minify SCSS',
       message : message.error,
       sound   : 'beep'
     }))
-    .pipe(gulp.dest(`${config.thm}/styles/`))
+    .pipe(gulp.dest(`${config.thm}styles/`))
     .pipe($.notify({
       title   : 'Minify SCSS',
       message : message.minified,
@@ -218,14 +252,14 @@ gulp.task('minCss', () => {
 // JS
 
 gulp.task('minJs', () => {
-  return gulp.src(`${config.thm}/scripts/app.js`)
+  return gulp.src(`${config.thm}scripts/app.js`)
     .pipe($.uglify())
     .on('error', $.notify.onError({
       title   : 'Minify JS',
       message : message.error,
       sound   : 'beep'
     }))
-    .pipe(gulp.dest(`${config.thm}/scripts/`))
+    .pipe(gulp.dest(`${config.thm}scripts/`))
     .pipe($.notify({
       title   : 'Minify JS',
       message : message.minified,
@@ -236,14 +270,14 @@ gulp.task('minJs', () => {
 // Images
 
 gulp.task('minImages', () => {
-  return gulp.src(`${config.thm}/assets/images/*.+(png|jpg|jpeg|gif|svg)`)
+  return gulp.src(`${config.thm}assets/images/*.+(png|jpg|jpeg|gif|svg)`)
     .pipe($.imagemin())
     .on('error', $.notify.onError({
       title   : 'Minfiy images',
       message : message.error,
       sound   : 'beep'
     }))
-    .pipe(gulp.dest(`${config.thm}/assets/images/`))
+    .pipe(gulp.dest(`${config.thm}assets/images/`))
     .pipe($.notify({
       title   : 'Minify images',
       message : message.minified,
@@ -255,8 +289,8 @@ gulp.task('minImages', () => {
 
 gulp.task('cleanMaps', () => {
   return gulp.src([
-    `${config.thm}/scripts/app.js.map`,
-    `${config.thm}/styles/app.css.map`
+    `${config.thm}scripts/app.js.map`,
+    `${config.thm}styles/app.css.map`
   ])
     .pipe($.clean({
       force: true,
