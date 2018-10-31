@@ -8,7 +8,7 @@
 - Loris Marino : developer
 
 ## Installation
-- Define server folder `server` and project name `project` in `build/[theme name]/gulpfile.babel.js`
+- Define server folder `server` in `build/{theme name}/gulpfile.babel.js`
 - Run in terminal
 ```bash
 # install dependencies

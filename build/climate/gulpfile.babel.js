@@ -17,17 +17,14 @@ const $ = gulpLoadPlugins()
 
 browserSync.create()
 
-// Set bases
-
-const server  = 'htdocs'
-const project = 'wordpress-climate'
-
 // Build paths
 
+const server  = 'htdocs'
 const folders = process.cwd().split('/')
+const project = folders[folders.length - 3]
 const theme   = `${folders[folders.length - 1]}/`
 
-let root = '/'
+let root  = '/'
 let local = ''
 
 const buildRoot = () => {
