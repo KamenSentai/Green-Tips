@@ -92,7 +92,8 @@ gulp.task('server', ['root', 'styles', 'scripts', 'assets', 'templates'], () => 
   ], ['styles'])
   gulp.watch([
     '*.+(html|php)',
-    '**/*.+(html|php)'
+    '**/*.+(html|php)',
+    '**/**/*.+(html|php)'
   ],['templates'])
 })
 
@@ -204,6 +205,7 @@ gulp.task('scripts', () => {
 
 gulp.task('templates', () => {
   return gulp.src([
+    './**/**/*.+(html|php)',
     './**/*.+(html|php)',
     './*.+(html|php)'
   ])
