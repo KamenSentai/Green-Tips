@@ -1,5 +1,8 @@
 # WordPress project on climate
 
+## Theme
+Name : Green Tips
+
 ## Team
 - Théodore Morio : Project manager
 - Bryan Chung : UX/UI design
