@@ -1,7 +1,7 @@
 <?php
 
 define('THEME_PATH',       get_template_directory()       );
-define('TEMPLATE_PATH',    THEME_PATH . '/templates'      );
+define('INCLUDES_PATH',    THEME_PATH . '/includes'       );
 define('THEME_URL',        get_template_directory_uri()   );
 define('CSS_URL',          THEME_URL  . '/styles'         );
 define('JS_URL',           THEME_URL  . '/scripts'        );
