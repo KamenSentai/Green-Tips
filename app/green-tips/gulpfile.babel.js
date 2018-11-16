@@ -75,7 +75,7 @@ const message = {
 
 // Server
 
-gulp.task('server', ['root', 'styles', 'scripts', 'assets', 'templates'], () => {
+gulp.task('server', ['root', 'data', 'assets', 'styles', 'scripts', 'templates'], () => {
   browserSync.init({
     proxy   : `http://localhost/${local}${project}/public/`,
     browser : 'Google Chrome'
@@ -85,6 +85,10 @@ gulp.task('server', ['root', 'styles', 'scripts', 'assets', 'templates'], () => 
     '!./*.+(html|php)',
     './*.*'
   ], ['root'])
+  gulp.watch([
+    '*.json',
+    '**/*.json'
+  ],['data'])
   gulp.watch(`${config.src}assets/**/*.*`, ['assets'])
   gulp.watch([
     `${config.src}scss/**/*.scss`,
@@ -108,14 +112,36 @@ gulp.task('root', () => {
   ])
     .pipe($.plumber())
     .on('error', $.notify.onError({
-      title   : 'Move root',
+      title   : 'Root',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe(gulp.dest(`${config.thm}`))
     .pipe(browserSync.stream())
     .pipe($.notify({
-      title   : 'Move root',
+      title   : 'Root',
+      message : message.exported,
+      sound   : 'beep'
+    }))
+})
+
+// Data
+
+gulp.task('data', () => {
+  return gulp.src([
+    '**/*.json',
+    '*.json',
+  ])
+    .pipe($.plumber())
+    .on('error', $.notify.onError({
+      title   : 'Data',
+      message : message.error,
+      sound   : 'beep'
+    }))
+    .pipe(gulp.dest(`${config.thm}`))
+    .pipe(browserSync.stream())
+    .pipe($.notify({
+      title   : 'Data',
       message : message.exported,
       sound   : 'beep'
     }))
@@ -127,14 +153,14 @@ gulp.task('assets', () => {
   return gulp.src(`${config.src}assets/**/*.*`)
     .pipe($.plumber())
     .on('error', $.notify.onError({
-      title   : 'Move assets',
+      title   : 'Assets',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe(gulp.dest(`${config.thm}assets/`))
     .pipe(browserSync.stream())
     .pipe($.notify({
-      title   : 'Move assets',
+      title   : 'Assets',
       message : message.exported,
       sound   : 'beep'
     }))
@@ -148,7 +174,7 @@ gulp.task('styles', () => {
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.sass())
     .on('error', $.notify.onError({
-      title   : 'SASS',
+      title   : 'Styles',
       message : message.error,
       sound   : 'beep'
     }))
@@ -160,7 +186,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(`${config.thm}styles/`))
     .pipe(browserSync.stream())
     .pipe($.notify({
-      title   : 'SASS',
+      title   : 'Styles',
       message : message.compiled,
       sound   : 'beep'
     }))
@@ -213,14 +239,14 @@ gulp.task('templates', () => {
   ])
     .pipe($.plumber())
     .on('error', $.notify.onError({
-      title   : 'Move pages',
+      title   : 'Templates',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe(gulp.dest(`${config.thm}`))
     .pipe(browserSync.stream())
     .pipe($.notify({
-      title   : 'Move pages',
+      title   : 'Templates',
       message : message.exported,
       sound   : 'beep'
     }))
@@ -238,13 +264,13 @@ gulp.task('minCss', () => {
   return gulp.src(`${config.thm}styles/app.css`)
     .pipe($.cssnano())
     .on('error', $.notify.onError({
-      title   : 'Minify SCSS',
+      title   : 'Styles',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe(gulp.dest(`${config.thm}styles/`))
     .pipe($.notify({
-      title   : 'Minify SCSS',
+      title   : 'Styles',
       message : message.minified,
       sound   : 'beep'
     }))
@@ -256,13 +282,13 @@ gulp.task('minJs', () => {
   return gulp.src(`${config.thm}scripts/app.js`)
     .pipe($.uglify())
     .on('error', $.notify.onError({
-      title   : 'Minify JS',
+      title   : 'Scripts',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe(gulp.dest(`${config.thm}scripts/`))
     .pipe($.notify({
-      title   : 'Minify JS',
+      title   : 'Scripts',
       message : message.minified,
       sound   : 'beep'
     }))
@@ -274,13 +300,13 @@ gulp.task('minImages', () => {
   return gulp.src(`${config.thm}assets/images/*.+(png|jpg|jpeg|gif|svg)`)
     .pipe($.imagemin())
     .on('error', $.notify.onError({
-      title   : 'Minfiy images',
+      title   : 'Images',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe(gulp.dest(`${config.thm}assets/images/`))
     .pipe($.notify({
-      title   : 'Minify images',
+      title   : 'Images',
       message : message.minified,
       sound   : 'beep'
     }))
@@ -298,12 +324,12 @@ gulp.task('cleanMaps', () => {
       read: false
     }))
     .on('error', $.notify.onError({
-      title   : 'Clean maps',
+      title   : 'Maps',
       message : message.error,
       sound   : 'beep'
     }))
     .pipe($.notify({
-      title   : 'Clean maps',
+      title   : 'Maps',
       message : message.cleaned,
       sound   : 'beep'
     }))
