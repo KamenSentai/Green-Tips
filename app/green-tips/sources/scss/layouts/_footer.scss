@@ -1,0 +1,39 @@
+#footer {
+  .footer {
+    padding: 20px;
+
+    background-color: $limeade;
+    .logo img {
+      height: 60px;
+    }
+    nav {
+      ul {
+        display: flex;
+
+        list-style: none;
+
+        align-items: center;
+
+        li {
+          font-family: $title;
+          font-weight: 500;
+
+          text-transform: uppercase;
+
+          color: $white;
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    padding: 10px;
+
+    text-align: center;
+
+    color: $white;
+    background-color: rgba($limeade, 0.5);
+  }
+}
