@@ -1,7 +1,7 @@
 <footer id="footer">
   <div class="footer">
     <div class="container">
-      <div class="row justify-content-around align-items-center">
+      <div class="row justify-content-between align-items-center">
         <div class="col-3">
           <div class="logo">
             <img src="<?php echo THEME_URL; ?>/assets/images/logo-white.svg">

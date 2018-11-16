@@ -1,5 +1,5 @@
 {
-  "name": "wordpress-climate",
+  "name": "green-tips",
   "version": "1.0.0",
   "description": "## Team - Théodore Morio : Project manager - Bryan Chung : UX/UI design - Alain Cao Van Truong : developer - Florian Durand : developer - Loris Marino : developer",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KamenSentai/wordpress-climate.git"
+    "url": "git+https://github.com/KamenSentai/Green-Tips.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KamenSentai/wordpress-climate/issues"
+    "url": "https://github.com/KamenSentai/Green-Tips/issues"
   },
-  "homepage": "https://github.com/KamenSentai/wordpress-climate#readme",
+  "homepage": "https://github.com/KamenSentai/Green-Tips#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
