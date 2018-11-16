@@ -1,7 +1,7 @@
 <header id="header">
   <div class="top-bar">
-    <div class="container">
-      <div class="row justify-content-between align-items-center">
+    <div class="container-fluid">
+      <div class="row justify-content-around align-items-center">
         <div class="col-3">
           <div class="logo">
             <img src="<?php echo THEME_URL; ?>/assets/images/logo.svg">
