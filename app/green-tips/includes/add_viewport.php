@@ -1,5 +1,5 @@
 <?php
-add_action("wp_head", "aside_add_viewport");
+add_action("wp_head", "green-tips_add_viewport");
 
 function aside_add_viewport()
 {

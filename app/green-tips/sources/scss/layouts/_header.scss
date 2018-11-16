@@ -12,15 +12,27 @@
     img {
       height: 50px;
     }
+
+    @media screen and (max-width: $md) {
+      text-align: center;
+    }
   }
 
   nav {
+    @media screen and (max-width: $md) {
+      margin-top: 20px;
+      padding: 20px;
+    }
     ul {
       display: flex;
 
       list-style: none;
 
       align-items: center;
+
+      @media screen and (max-width: $md) {
+        flex-direction: column;
+      }
 
       li {
         transition: color 0.2s;
@@ -35,10 +47,16 @@
           text-transform: uppercase;
         }
 
+        @media screen and (min-width: $min-md) {
+          &:not(:last-child) {
+            margin-right: 15px;
+          }
+        }
 
-
-        &:not(:last-child) {
-          margin-right: 15px;
+        @media screen and (max-width: $md) {
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
         }
 
         &:hover,

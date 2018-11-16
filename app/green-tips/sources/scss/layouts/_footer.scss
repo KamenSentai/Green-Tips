@@ -3,16 +3,29 @@
     padding: 20px;
 
     background-color: $limeade;
-    .logo img {
-      height: 60px;
+    .logo {
+      img {
+        height: 60px;
+      }
+      @media screen and (max-width: $md) {
+        text-align: center;
+      }
     }
     nav {
+      @media screen and (max-width: $md) {
+        margin-top: 20px;
+        padding: 20px;
+      }
       ul {
         display: flex;
 
         list-style: none;
 
         align-items: center;
+
+        @media screen and (max-width: $md) {
+          flex-direction: column;
+        }
 
         li {
           font-family: $title;
@@ -21,8 +34,17 @@
           text-transform: uppercase;
 
           color: $white;
-          &:not(:last-child) {
-            margin-right: 20px;
+
+          @media screen and (min-width: $min-md) {
+            &:not(:last-child) {
+              margin-right: 15px;
+            }
+          }
+
+          @media screen and (max-width: $md) {
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
           }
         }
       }

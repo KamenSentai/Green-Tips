@@ -1,7 +1,7 @@
 <section id="collection">
   <div class="container">
     <div class="row">
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="card">
           <div class="card__image"></div>
           <h2 class="card__title">Pékin, ville vapeur sautée</h2>
@@ -12,7 +12,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="card">
           <div class="card__image"></div>
           <h2 class="card__title">Pékin, ville vapeur sautée</h2>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="card">
           <div class="card__image"></div>
           <h2 class="card__title">Pékin, ville vapeur sautée</h2>
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div class="card">
           <div class="card__image"></div>
           <h2 class="card__title">Pékin, ville vapeur sautée</h2>

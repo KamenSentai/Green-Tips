@@ -2,12 +2,12 @@
   <div class="top-bar">
     <div class="container-fluid">
       <div class="row justify-content-around align-items-center">
-        <div class="col-3">
+        <div class="col-12 col-md-3">
           <div class="logo">
             <img src="<?php echo THEME_URL; ?>/assets/images/logo.svg">
           </div>
         </div>
-        <div class="col-auto">
+        <div class="col-12 col-md-auto">
           <nav>
             <ul>
               <li class="active">

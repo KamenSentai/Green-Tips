@@ -1,7 +1,7 @@
 <section id="tips-day">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <h2 class="tips-day__title">
           Le tips du jour
         </h2>
@@ -24,7 +24,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <div class="tips-day__image">
         </div>
       </div>
