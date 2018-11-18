@@ -13,7 +13,7 @@ body {
   grid-template-areas: 'header'
   'content'
   'footer';
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 80px 1fr 110px;
 
   #header {
     grid-area: header;

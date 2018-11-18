@@ -1,5 +1,5 @@
 body {
-  font-family: $title;
+  font-family: $text;
 
   color: $black;
 }
@@ -13,4 +13,8 @@ a {
   text-decoration: none;
 
   color: inherit;
+}
+
+input:focus {
+  outline-style: none;
 }

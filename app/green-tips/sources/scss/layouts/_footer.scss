@@ -1,8 +1,13 @@
 #footer {
   .footer {
+    display: flex;
+
+    height: 80px;
     padding: 20px;
 
     background-color: $limeade;
+
+    align-items: center;
     .logo {
       img {
         height: 60px;
@@ -51,11 +56,15 @@
     }
   }
   .copyright {
-    padding: 10px;
+    display: flex;
 
-    text-align: center;
+    height: 30px;
+    padding: 10px;
 
     color: $white;
     background-color: rgba($limeade, 0.5);
+
+    align-items: center;
+    justify-content: center;
   }
 }
