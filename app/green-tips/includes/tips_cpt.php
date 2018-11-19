@@ -42,7 +42,7 @@ $labels = array(
     $args = array(
         'label' => __( 'tags' ),
         'rewrite' => array( 'slug' => 'tags' ),
-        'hierarchical' => false,
+        'hierarchical' => true,
     );
     register_taxonomy( $taxonomy, $object_type, $args );
 }
