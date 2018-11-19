@@ -38,7 +38,7 @@ $labels = array(
 
     register_post_type($post_type_tips, $args );
     $taxonomy = "tags";
-    $object_type = array("tips");
+    $object_type = array("tips","enquete");
     $args = array(
         'label' => __( 'tags' ),
         'rewrite' => array( 'slug' => 'tags' ),
