@@ -31,7 +31,7 @@ $labels = array(
         'publicly_queryable'  => true,
         'exclude_from_search' => false,
         'has_archive'         => false,
-        'query_var'           => string,
+        'query_var'           => true,
         'can_export'          => true,
         'rewrite'             => array( 'slug' => $post_type )
     );
