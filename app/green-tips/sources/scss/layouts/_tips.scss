@@ -1,12 +1,12 @@
 .tips {
-  overflow: hidden;
   #filters {
-    position: absolute;
-    top: 0;
+    position: sticky;
+    top: 80px;
     left: 0;
 
     width: 100%;
-    height: calc(100vh - 110px);
+    height: calc(100vh - 80px);
+    padding-top: 20px;
     padding-right: 20px;
     &::before {
       position: absolute;
@@ -21,12 +21,13 @@
       background: linear-gradient(to right, rgba(#000000, 0.3) 0%,rgba(#000000, 0) 100%);
     }
     .filters__title {
+      margin-top: 0;
       font-family: $title;
       font-weight: 500;
 
       color: $limeade;
 
-      fpnt-size: 1.1em;
+      font-size: 1.2em;
     }
 
     .filters-type__title {
@@ -88,15 +89,6 @@
         }
       }
     }
-  }
-
-  .cards-container {
-    overflow-y: scroll;
-  }
-
-  .cards {
-    height: 100%;
-    margin-bottom: 110px;
   }
 
   .card-tips {
