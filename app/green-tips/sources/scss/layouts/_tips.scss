@@ -1,14 +1,25 @@
 .tips {
+  overflow: hidden;
   #filters {
     position: absolute;
     top: 0;
     left: 0;
 
     width: 100%;
-    height: calc(100vh - 180px);
-    padding-left: 50px;
+    height: calc(100vh - 110px);
+    padding-right: 20px;
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
 
-    box-shadow: 0 0 5px #000000;
+      width: 3px;
+
+      content: '';
+
+      background: linear-gradient(to right, rgba(#000000, 0.3) 0%,rgba(#000000, 0) 100%);
+    }
     .filters__title {
       font-family: $title;
       font-weight: 500;
@@ -79,10 +90,17 @@
     }
   }
 
-  .cards {
-    margin-top: $section-margin;
+  .cards-container {
+    overflow-y: scroll;
   }
+
+  .cards {
+    height: 100%;
+    margin-bottom: 110px;
+  }
+
   .card-tips {
+    margin: 20px 0;
     padding: 20px;
 
     box-shadow: 0 1px 4px $black;
