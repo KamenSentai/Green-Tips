@@ -32,7 +32,7 @@
   </div>
 
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-between">
       <div class="col-12 col-md-2">
         <aside id="filters">
           <h2 class="filters__title">
@@ -66,7 +66,7 @@
           </div>
         </aside>
       </div>
-      <div class="col-12 col-md-7 offset-md-2 cards-container">
+      <div class="col-12 col-md-7 cards-container">
         <div class="cards">
           <div class="card-tips">
             <div class="card-tips-top">
