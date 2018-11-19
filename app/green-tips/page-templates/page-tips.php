@@ -97,7 +97,7 @@
           <p class="card-tips__resume">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
           </p>
-          <div class="card-tips__image"></div>
+          <img src="<?= IMAGES_URL; ?>/test.jpg" class="card-tips__image">
         </div>
         <div class="card-tips">
           <div class="card-tips-top">

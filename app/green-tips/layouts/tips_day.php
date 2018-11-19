@@ -25,8 +25,7 @@
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <div class="tips-day__image">
-        </div>
+        <img src="<?= IMAGES_URL; ?>/test.jpg" class="tips-day__image">
       </div>
     </div>
   </div>
