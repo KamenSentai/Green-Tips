@@ -3,7 +3,7 @@
 function ajout_cpt_enquete() {
     $post_type_enquete = "enquete";
 $labels = array(
-        'name'               => 'enquete',
+        'name'               => 'Enquête',
         'singular_name'      => 'enquete',
         'all_items'          => 'Toutes les Enquêtes',
         'add_new'            => 'Ajouter une Enquête',
