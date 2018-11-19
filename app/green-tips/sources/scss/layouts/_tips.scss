@@ -5,7 +5,7 @@
     left: 0;
 
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100%;
     padding-top: 20px;
     padding-right: 20px;
     &::before {
@@ -21,13 +21,13 @@
       background: linear-gradient(to right, rgba(#000000, 0.3) 0%,rgba(#000000, 0) 100%);
     }
     .filters__title {
-      margin-top: 0;
       font-family: $title;
+      font-size: 1.2em;
       font-weight: 500;
 
-      color: $limeade;
+      margin-top: 0;
 
-      font-size: 1.2em;
+      color: $limeade;
     }
 
     .filters-type__title {
