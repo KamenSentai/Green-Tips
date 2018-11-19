@@ -66,7 +66,7 @@
           </div>
         </aside>
       </div>
-      <div class="col-12 col-md-8 cards-container">
+      <div class="col-12 col-md-8">
         <div class="card-tips">
           <div class="card-tips-top">
             <h2 class="card-tips-top__title">
