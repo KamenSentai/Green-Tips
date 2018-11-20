@@ -1,5 +1,5 @@
 <?php
-function my_pre_save_post( $post_id ) {
+function gt_my_pre_save_post( $post_id ) {
  
  // check if this is to be a new post
  if( $post_id != 'new' )
@@ -9,8 +9,6 @@ function my_pre_save_post( $post_id ) {
 
  // Create a new post
  $post = array(
-     'post_status'  => 'pending',
-     'post_title'    => $_POST['acf']['field_5bec24cc42f40'],
      'post_type'  => 'tips',
  );
 
@@ -24,4 +22,14 @@ function my_pre_save_post( $post_id ) {
  return $post_id;
 }
 
-add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+add_filter('acf/pre_save_post' , 'gt_my_pre_save_post' );
+
+function gt_my_acf_prepare_field( $field ) {
+	
+    $field['label'] = "Titre";
+    
+
+    return $field;
+    
+}
+add_filter('acf/prepare_field/name=_post_title', 'gt_my_acf_prepare_field');
