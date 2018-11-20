@@ -3,6 +3,13 @@
 
   padding: 10px 15px;
 
+  cursor: pointer;
+  transition: 0.2s;
+
   color: $white;
   background-color: $limeade;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }

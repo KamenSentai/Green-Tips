@@ -15,6 +15,15 @@ a {
   color: inherit;
 }
 
-input:focus {
+input,
+textarea {
+  padding: 5px;
+
+  border: 1px solid #e6e6e6;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #b1b1b1;
   outline-style: none;
 }

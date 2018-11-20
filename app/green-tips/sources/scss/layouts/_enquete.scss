@@ -52,7 +52,7 @@
   .header__title {
     font-size: 2em;
 
-    max-width: 60%;
+    max-width: 80%;
 
     text-shadow: 1px 1px 5px rgba(#000000, 0.2);
   }
@@ -64,5 +64,14 @@
     border-radius: 5px;
     background-color: #ffffff;
     box-shadow: 3px 3px 8px rgba($black, 0.6);
+  }
+
+  .others__title {
+    margin-top: $section-margin;
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    color: $limeade;
   }
 }
