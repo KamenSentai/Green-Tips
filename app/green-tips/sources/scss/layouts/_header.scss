@@ -47,6 +47,11 @@
         transition: color 0.2s;
         a {
           padding: 10px 15px;
+          color: $black;
+          transition: 0.2s;
+          &:hover {
+            color:$limeade; 
+          }
         }
 
         &:not(.push) {

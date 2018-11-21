@@ -1,3 +1,14 @@
+<?php $tipsday = array(
+            'post_type' => 'tips',
+            'posts_per_page' => 1,
+         );
+         $the_query = new WP_Query( $tipsday );
+         if($the_query -> have_posts())
+         {
+             while($the_query -> have_posts())
+            {
+                 $the_query -> the_post();
+                 ?>
 <section id="tips-day">
   <div class="container">
     <div class="row">
@@ -7,12 +18,10 @@
         </h2>
         <p class="tips-day__resume">
           <b style="font-size:1.3em">
-            Réduire l'opacité de ses documents avant impression
+          <?php the_title();?>
           </b>
           <br /><br />
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, animi repudiandae, tempore in dolore eligendi magni nisi rem nulla perferendis error, pariatur mollitia architecto nihil laboriosam hic. Sunt, vel aperiam?
-          <br /><br />
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, animi repudiandae, tempore in dolore eligendi magni nisi rem nulla perferendis error, pariatur mollitia architecto nihil laboriosam hic. Sunt, vel aperiam?
+          <?php the_field('tips_main_content');?>
         </p>
         <div class="tips-day-bottom">
           <div class="button-primary tips-day-bottom__more">
@@ -25,8 +34,18 @@
         </div>
       </div>
       <div class="col-12 col-md-6">
-        <img src="<?= IMAGES_URL; ?>/test.jpg" class="tips-day__image">
+      <?php if( get_field('tips_image') ): ?>
+        <img src="<?php the_field('tips_image');?>" class="tips-day__image">
+            <?php
+            else: 
+             ?>
+        <img src="http://localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/logo.svg" class="tips-day__image">
+            <?php endif; ?>
       </div>
     </div>
   </div>
 </section>
+          <?php }}else{
+            echo "no result";}
+         ?>
+
