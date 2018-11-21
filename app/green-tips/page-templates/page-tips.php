@@ -20,6 +20,10 @@
             <span></span>
           </div>
         </div>
+        <div class="popup-tips-types">
+          <span><a href="#">#test</a></span>
+          <span><a href="#">#test</a></span>
+        </div>
         <p class="popup-tips__resume">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
           <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?

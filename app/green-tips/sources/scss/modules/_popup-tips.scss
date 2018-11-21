@@ -28,6 +28,16 @@
     }
   }
 
+  .popup-tips-types {
+    span {
+      font-size: 0.9em;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
   .popup-tips-content {
     position: relative;
     z-index: 4;
