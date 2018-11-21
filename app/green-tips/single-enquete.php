@@ -3,10 +3,10 @@
 <?php if ( have_posts() ) :?>
 <?php while ( have_posts() ) : the_post(); ?>
 <div class="header">
-<img src="<?= IMAGES_URL; ?>/test.jpg" class="header__bg">
+<img src="<?php the_field('enquete_background_image');?>" class="header__bg">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-10">
         <div class="header-top">
           <div class="header-top__badge">
           <?php the_terms( $post->ID, 'tags', '', ' / ' );?>
@@ -28,7 +28,7 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-11 col-md-8">
+    <div class="col-11 col-md-10">
       <div class="resume">
       <?php the_content();?>
       </div>

@@ -105,11 +105,11 @@
   }
 
   .card-tips__image {
-    width: 100%;
+    img{
+      width: 100%;
     height: 200px;
-
     background-color: #fafafa;
-
     object-fit: cover;
+    }
   }
 }
