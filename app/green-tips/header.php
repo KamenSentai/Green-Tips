@@ -7,6 +7,6 @@
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
         <?php wp_head(); ?>
     </head>
-    <body class="popup-publish-tips-active popup-tips-active"<?php //body_class(); ?>>
+    <body <?php //class="popup-publish-tips-active popup-tips-active"?><?php //body_class(); ?>>
     <div class="page">
     <?php include 'layouts/header.php'; ?>
