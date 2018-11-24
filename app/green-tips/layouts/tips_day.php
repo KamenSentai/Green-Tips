@@ -34,13 +34,17 @@
         </div>
       </div>
       <div class="col-12 col-md-6">
-      <?php if( get_field('tips_image') ): ?>
-        <img src="<?php the_field('tips_image');?>" class="tips-day__image">
-            <?php
-            else: 
-             ?>
-        <img src="http://localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/logo.svg" class="tips-day__image">
-            <?php endif; ?>
+        <div class="tips-day__image">
+           <?php
+                 $image = get_field('tips_image');
+                 $size = 'large';
+                     if( $image ) {
+                         echo wp_get_attachment_image( $image, $size );
+                     }
+                     else{
+                      echo "<img src=\"localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/logo.svg\">";
+                     }?>
+        </div>
       </div>
     </div>
   </div>

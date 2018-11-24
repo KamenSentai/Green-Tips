@@ -10,26 +10,7 @@
         <div class="col-12 col-md-auto">
           <nav>
             <ul>
-              <li>
-                <a href="#">
-                  À propos
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Newsletters
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Mentions légales
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  Conditions générales
-                </a>
-              </li>
+              <?php wp_nav_menu_no_ul_footer(); ?>
             </ul>
           </nav>
         </div>

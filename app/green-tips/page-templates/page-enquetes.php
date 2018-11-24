@@ -43,64 +43,37 @@
         <section id="enquetes">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-12 col-md-6">
+              <?php $enquetes = array(
+            'post_type' => 'enquete'
+         );
+         $the_query = new WP_Query( $enquetes );
+         if($the_query -> have_posts())
+         {
+             while($the_query -> have_posts())
+            {
+                 $the_query -> the_post();
+                 ?>
+                 <a href="<?php the_permalink();?>" alt=" <?php the_title();?>">
+                 <div class="col-12 col-md-6">
                 <div class="card">
-                  <div class="card__image"></div>
-                  <h2 class="card__title">Pékin, ville vapeur sautée</h2>
-                  <p class="card__resume">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae minus aliquid ratione, saepe distinctio molestias temporibus magni laboriosam enim optio excepturi accusantium minima eligendi qui nam? Libero, sunt possimus.</p>
+                <img src="<?php the_field('enquete_background_image');?>" class="card__image">
+
+                  <h2 class="card__title"><?php the_title();?></h2>
+                  <div class="card__resume">
+                    <?php the_excerpt();?></div>
                   <div class="card__more">
-                    <a href="#" class="button-primary">Lire la suite</a>
+                    <a href="<?php the_permalink();?>" class="button-primary">Lire la suite</a>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="card">
-                  <div class="card__image"></div>
-                  <h2 class="card__title">Pékin, ville vapeur sautée</h2>
-                  <p class="card__resume">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae minus aliquid ratione, saepe distinctio molestias temporibus magni laboriosam enim optio excepturi accusantium minima eligendi qui nam? Libero, sunt possimus.</p>
-                  <div class="card__more">
-                    <a href="#" class="button-primary">Lire la suite</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div class="card">
-                  <div class="card__image"></div>
-                  <h2 class="card__title">Pékin, ville vapeur sautée</h2>
-                  <p class="card__resume">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia recusandae minus aliquid ratione, saepe distinctio molestias temporibus magni laboriosam enim optio excepturi accusantium minima eligendi qui nam? Libero, sunt possimus.</p>
-                  <div class="card__more">
-                    <a href="#" class="button-primary">Lire la suite</a>
-                  </div>
-                </div>
-              </div>
+              </div> </a>
+          <?php }}else{
+            echo "no result";}
+         ?>
             </div>
-
-
           </div>
         </section>
       </div>
     </div>
   </div>
-
-<?php //$enquetes = array(
-        //     'post_type' => 'enquete'
-        //  );
-        //  $the_query = new WP_Query( $enquetes );
-        //  if($the_query -> have_posts())
-        //  {
-        //      while($the_query -> have_posts())
-        //     {
-        //          $the_query -> the_post();
-        //          ?>
-                  <?php //the_title();?>
-                  <!--<a href="--><?php //the_permalink();?><!--"> link </a>-->
-
-          <?php //}}else{
-        //    echo "no result";
-        //} ?>
-
 </main>
 <?php get_footer();?>

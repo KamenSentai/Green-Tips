@@ -24,11 +24,14 @@
   }
 
   .card__resume {
+    p{
+      color: $black;
+    }
     font-size: 0.8em;
 
     position: relative;
 
-    padding: 20px;
+    padding: 0px 20px 5px 20px;
 
     &::before {
       position: absolute;
@@ -107,7 +110,7 @@
   .card-tips__image {
     img{
       width: 100%;
-    height: 200px;
+    height: auto;
     background-color: #fafafa;
     object-fit: cover;
     }

@@ -98,7 +98,7 @@
                     <div class="card-tips__image">
                     <?php
                  $image = get_field('tips_image');
-                 $size = 'medium';
+                 $size = 'tips_tl';
                      if( $image ) {
                          echo wp_get_attachment_image( $image, $size );
                      }?>
