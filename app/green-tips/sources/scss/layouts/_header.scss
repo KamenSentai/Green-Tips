@@ -12,19 +12,27 @@
   background-color: #ffffff;
   box-shadow: 0 0 10px $black;
 
+  @media screen and (max-width: $md) {
+    position: static;
+
+    height: auto;
+  }
+
   .container,
   .row {
     height: 100%;
   }
 
   .logo {
-    
     img {
-      cursor: pointer;
       height: 50px;
+
+      cursor: pointer;
     }
 
     @media screen and (max-width: $md) {
+      margin-top: 20px;
+
       text-align: center;
     }
   }
@@ -49,10 +57,12 @@
         transition: color 0.2s;
         a {
           padding: 10px 15px;
-          color: $black;
+
           transition: 0.2s;
+
+          color: $black;
           &:hover {
-            color:$limeade; 
+            color: $limeade;
           }
         }
 
