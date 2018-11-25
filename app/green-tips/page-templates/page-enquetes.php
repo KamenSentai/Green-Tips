@@ -53,11 +53,12 @@
             {
                  $the_query -> the_post();
                  ?>
-                 <!--<a href="<?php the_permalink();?>" alt=" <?php the_title();?>">-->
+
                  <div class="col-12 col-md-6">
                 <div class="card">
-                <img src="<?php the_field('enquete_background_image');?>" class="card__image">
-<div class="card-infos">
+                <a href="<?php the_permalink();?>" alt=" <?php the_title();?>"><img src="<?php the_field('enquete_background_image');?>" class="card__image">
+            </a>
+                <div class="card-infos">
                   <h2 class="card__title"><?php the_title();?></h2>
                   <div class="card__resume">
                     <?php the_excerpt();?></div>
@@ -66,7 +67,7 @@
                   </div>
             </div>
                 </div>
-              </div> <!--</a>-->
+              </div>
           <?php }}else{
             echo "no result";}
          ?>

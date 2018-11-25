@@ -27,8 +27,10 @@
                  ?>
                  <div class="col-12 col-md-4">
                  <div class="card">
+                 <a href="<?php the_permalink();?>" alt=" <?php the_title();?>">
                 <img src="<?php the_field('enquete_background_image');?>" class="card__image">
-                  <div class="card-infos">
+            </a>
+                <div class="card-infos">
                   <h2 class="card__title"><?php the_title();?></h2>
                   <div class="card__resume">
                     <?php the_excerpt();?></div>
