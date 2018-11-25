@@ -8,7 +8,15 @@
 
   box-shadow: 0 1px 4px $black;
 
-  justify-content: space-between;
+  .card-infos {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    padding: 20px;
+
+    justify-content: stretch;
+  }
 
   .card__image {
     width: 100%;
@@ -17,14 +25,12 @@
     background-color: #fafafa;
 
     object-fit: cover;
-    object-fit: cover;
   }
 
   .card__title {
     font-size: 1.2em;
 
     margin-top: 20px;
-    padding: 0 20px;
 
     color: $limeade;
   }
@@ -34,16 +40,17 @@
 
     position: relative;
 
-    padding: 0 20px 5px 20px;
+    height: 100%;
+
     p {
       color: $black;
     }
 
     &::before {
       position: absolute;
-      right: 20px;
+      right: 0;
       bottom: 0;
-      left: 20px;
+      left: 0;
 
       height: 50px;
 
