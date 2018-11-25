@@ -1,8 +1,14 @@
 .card {
+  display: flex;
+  flex-direction: column;
+
+  height: 500px;
   margin-bottom: 30px;
   padding-bottom: 20px;
 
   box-shadow: 0 1px 4px $black;
+
+  justify-content: space-between;
 
   .card__image {
     width: 100%;
@@ -18,20 +24,20 @@
     font-size: 1.2em;
 
     margin-top: 20px;
-    margin-left: 20px;
+    padding: 0 20px;
 
     color: $limeade;
   }
 
   .card__resume {
-    p{
-      color: $black;
-    }
     font-size: 0.8em;
 
     position: relative;
 
-    padding: 0px 20px 5px 20px;
+    padding: 0 20px 5px 20px;
+    p {
+      color: $black;
+    }
 
     &::before {
       position: absolute;
@@ -108,11 +114,13 @@
   }
 
   .card-tips__image {
-    img{
+    img {
       width: 100%;
-    height: auto;
-    background-color: #fafafa;
-    object-fit: cover;
+      height: auto;
+
+      background-color: #fafafa;
+
+      object-fit: cover;
     }
   }
 }
