@@ -6,30 +6,50 @@ get_header();
 <main id="content">
 
 <div class="popup-tips">
+<?php $tipsday = array(
+            'post_type' => 'tips',
+            'posts_per_page' => 1,
+         );
+         $the_query = new WP_Query( $tipsday );
+         if($the_query -> have_posts())
+         {
+             while($the_query -> have_posts())
+            {
+                 $the_query -> the_post();
+                 ?>
     <div class="popup-tips-content">
-      <div class="card-tips">
-        <div class="card-tips-top">
-          <h2 class="card-tips-top__title">
-            Réduire l'opacité de ses document avant impression
+    <div class="popup-close">
+        <img src="<?php echo THEME_URL; ?>/assets/images/popup-close.png" alt="Close popup">
+      </div>
+      <div class="popup-tips-infos">
+        <div class="popup-tips-top">
+          <h2 class="popup-tips-top__title">
+          <?php the_title();?>
           </h2>
-          <div class="card-tips-top-more">
+          <div class="popup-tips-top-more">
             <span></span>
               <span></span>
             <span></span>
           </div>
         </div>
-        <p class="card-tips__resume">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-          <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-          <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-          <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-          <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-          <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-          <br /><br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet magnam quidem labore magni, reprehenderit dolor in doloremque odit expedita aliquam. Voluptate quis beatae maxime numquam tempore blanditiis hic, perspiciatis obcaecati?
-        </p>
-        <div class="card-tips__image"></div>
+        <div class="popup-tips__resume">
+        <?php the_field('tips_main_content');?> </div>
+        <div class="popup-tips__image">
+        <?php
+                 $image = get_field('tips_image');
+                 $size = 'large';
+                     if( $image ) {
+                         echo wp_get_attachment_image( $image, $size );
+                     }
+                     else{
+                      echo "<img src=\"localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/logo.svg\">";
+                     }?>
+        </div>
       </div>
     </div>
+    <?php }}else{
+            echo "no result";}
+         ?>
   </div>
 
 <?php

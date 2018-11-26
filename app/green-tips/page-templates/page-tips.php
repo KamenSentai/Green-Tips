@@ -9,7 +9,7 @@
       <div class="popup-close">
         <img src="<?php echo THEME_URL; ?>/assets/images/popup-close.png" alt="Close popup">
       </div>
-      <div class="popup-tips-infos">
+      <div class="popup-tips-container">
         <div class="popup-tips-top">
           <h2 class="popup-tips-top__title">
             Réduire l'opacité de ses document avant impression
