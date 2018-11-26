@@ -1,7 +1,8 @@
 <?php get_header();?>
 <main id="content" class="enquete">
 <?php if ( have_posts() ) :?>
-<?php while ( have_posts() ) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); 
+setPostViews(get_the_ID());?>
 <div class="header">
 <img src="<?php the_field('enquete_background_image');?>" class="header__bg">
   <div class="container">
@@ -19,7 +20,7 @@
         <?php the_title();?>
         </h1>
         <div class="header__infos">
-          Par <?php echo get_the_author();?> | 1000 vues
+          Par <?php echo get_the_author();?> | <?php echo getPostViews(get_the_ID()); ?>
         </div>
       </div>
     </div>
