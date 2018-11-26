@@ -25,9 +25,9 @@
           <?php the_field('tips_main_content');?>
         </p>
         <div class="tips-day-bottom">
-          <div class="button-primary tips-day-bottom__more">
+          <a class="button-primary tips-day-bottom__more" href="#" title="<?php the_title();?>">
             Lire la suite
-          </div>
+            </a>
           <div class="tips-day-bottom-like">
             140
             <img src="<?php echo THEME_URL; ?>/assets/images/like.svg">
