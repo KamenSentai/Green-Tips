@@ -44,7 +44,7 @@
         <?php if($the_query -> have_posts()): ?>
           <?php while($the_query -> have_posts()): ?>
             <?php $the_query -> the_post(); ?>
-            <div class="card-tips" data=<?php the_id();?>> 
+            <div class="card-tips" data-id="<?php the_id();?>"> 
               <div class="card-tips-top">
                 <h2 class="card-tips-top__title">
                   <?php the_title();?>
