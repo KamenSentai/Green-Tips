@@ -22,7 +22,24 @@
           <?php the_title();?>
           </b>
           <br /><br />
-          <?= substr(get_field('tips_main_content'), 0, 375) . '...'; ?>
+          <?php
+          $field = get_field('tips_main_content');
+          $field = preg_replace(
+            '#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',
+            "<a href=\"$1\" target=\"_blank\" alt=\"$3\">$3</a>$4",
+            $field
+          );
+          $words = explode(' ', $field);
+          $numberWords = 50;
+          for ($i = 0; $i < $numberWords; $i++) {
+            echo $words[$i];
+            if ($i == $numberWords) {
+              echo '...';
+            } else {
+              echo ' ';
+            }
+          }
+          ?>
         </p>
         <div class="tips-day-bottom">
           <a class="button-primary tips-day-bottom__more" href="#" title="<?php the_title();?>">

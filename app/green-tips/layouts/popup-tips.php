@@ -14,7 +14,15 @@
               </h2>
             </div>
             <div class="popup-tips__resume">
-              <?php the_field('tips_main_content');?>
+              <?php
+              $field = get_field('tips_main_content');
+              $field = preg_replace(
+                '#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',
+                "<a href=\"$1\" target=\"_blank\" alt=\"$3\">$3</a>$4",
+                $field
+              );
+              echo $field;
+              ?>
             </div>
             <div class="popup-tips__image">
               <?php
