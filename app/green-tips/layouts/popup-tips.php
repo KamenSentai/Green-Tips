@@ -11,11 +11,6 @@
             <h2 class="popup-tips-top__title">
               <?php the_title();?>
             </h2>
-            <div class="popup-tips-top-more">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
           </div>
           <div class="popup-tips__resume">
             <?php the_field('tips_main_content');?>
