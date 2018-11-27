@@ -20,3 +20,4 @@
   <?php endwhile; ?>
 <?php else: echo "no result";?>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
