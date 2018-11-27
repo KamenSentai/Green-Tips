@@ -21,3 +21,6 @@
     &copy; Green Tips 2018
   </div>
 </footer>
+<script type="text/javascript">
+var url = "<?= (isset($_SERVER["HTTPS"]) ? 'https' : 'http') . ':' . strstr(THEME_URL, 'wp-content', true); ?>";
+</script>

@@ -22,7 +22,7 @@
           <?php the_title();?>
           </b>
           <br /><br />
-          <?php the_field('tips_main_content');?>
+          <?= substr(get_field('tips_main_content'), 0, 375) . '...'; ?>
         </p>
         <div class="tips-day-bottom">
           <a class="button-primary tips-day-bottom__more" href="#" title="<?php the_title();?>">
