@@ -5,7 +5,11 @@ body {
   height: 100%;
   margin: 0;
 }
-
+.error{
+  width: 80%;
+  margin: 0.67em auto;
+  text-align: center;
+}
 .page {
   display: grid;
 
@@ -32,3 +36,4 @@ body {
     grid-area: footer;
   }
 }
+
