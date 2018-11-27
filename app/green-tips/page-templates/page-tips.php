@@ -35,24 +35,7 @@
                 </h2>
               </div>
               <p class="card-tips__resume">
-                <?php
-                $field = get_field('tips_main_content');
-                $field = preg_replace(
-                  '#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',
-                  "<a href=\"$1\" target=\"_blank\" alt=\"$3\">$3</a>$4",
-                  $field
-                );
-                $words = explode(' ', $field);
-                $numberWords = 50;
-                for ($i = 0; $i < $numberWords; $i++) {
-                  echo $words[$i];
-                  if ($i == $numberWords) {
-                    echo '...';
-                  } else {
-                    echo ' ';
-                  }
-                }
-                ?>
+                <?php helper_concat_text(get_field('tips_main_content'), 50); ?>
               </p>
             </div>
           <?php endwhile; ?>
