@@ -34,7 +34,7 @@ const popupTips = () => {
     for (const cardTip of cardTips) {
       cardTip.addEventListener('click', () => {
         const xhr = new XMLHttpRequest()
-        xhr.open('POST', `${url}/wp-admin/admin-ajax.php?action=ajax-tips`)
+        xhr.open('POST', `../wp-admin/admin-ajax.php?action=ajax-tips`)
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         xhr.send(encodeURI('ajax-tips'))
         xhr.onload = () => {
