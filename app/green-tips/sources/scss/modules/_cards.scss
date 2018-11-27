@@ -65,7 +65,14 @@
   margin: 20px 0;
   padding: 20px;
 
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
   box-shadow: 0 1px 4px $black;
+
+  &:hover {
+    box-shadow: 0 1px 7px $black;
+  }
 
   .card-tips-top {
     display: flex;
