@@ -8,7 +8,6 @@ const popupTips = () => {
 
     openPopupTipsDay.addEventListener('click', event => {
       event.preventDefault()
-      console.log(openPopupTipsDay)
       document.body.classList.add('popup-tips-active')
     })
 
@@ -39,11 +38,33 @@ const popupTips = () => {
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         xhr.send(encodeURI('ajax-tips'))
         xhr.onload = () => {
-          console.log(xhr.responseText)
           const popupResponse = document.implementation.createHTMLDocument("")
           popupResponse.body.innerHTML = xhr.responseText
+          popupResponse.body.classList.add('popup-body')
           contentTips.insertBefore(popupResponse.body, contentTips.firstChild)
           document.body.classList.add('popup-tips-active')
+
+          const popupTips        = document.querySelector('.popup-tips')
+          const popupTipsClose   = popupTips.querySelector('.popup-close')
+          const popupTipsContent = popupTips.querySelector('.popup-tips-content')
+
+          popupTipsClose.addEventListener('click', event => {
+            event.preventDefault()
+            const popupBody = contentTips.querySelector('.popup-body')
+            contentTips.removeChild(popupBody)
+            document.body.classList.remove('popup-tips-active')
+          })
+
+          popupTips.addEventListener('click', event => {
+            event.preventDefault()
+            const popupBody = contentTips.querySelector('.popup-body')
+            contentTips.removeChild(popupBody)
+            document.body.classList.remove('popup-tips-active')
+          })
+
+          popupTipsContent.addEventListener('click', event => {
+            event.stopPropagation()
+          })
         }
       })
     }
