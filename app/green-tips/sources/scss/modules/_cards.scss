@@ -82,22 +82,9 @@
     margin-top: 20px;
   }
 
-  .card-tips-top-more {
-    display: flex;
-    span {
-      width: 5px;
-      height: 5px;
-
-      border-radius: 100%;
-      background-color: $limeade;
-
-      &:not(:last-child) {
-        margin-right: 5px;
-      }
-    }
-  }
-
   .card-tips__resume {
+    min-height: 60px;
+  
     font-size: 0.8em;
 
     position: relative;
