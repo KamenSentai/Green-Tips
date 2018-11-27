@@ -4,6 +4,7 @@ const collectionLoad = () => {
 
 	if (collectionMore && collection) {
     const buttonCollection = collectionMore.querySelector('#button-collection')
+    const homeUrl  = document.body.dataset.home
 		let pagination = buttonCollection.dataset.pagination
 		let maxPages   = buttonCollection.dataset.pages
 
@@ -12,7 +13,7 @@ const collectionLoad = () => {
       pagination++
 
       const xhr = new XMLHttpRequest()
-      xhr.open('POST', `wp-admin/admin-ajax.php?action=ajax-collection`)
+      xhr.open('POST', `${homeUrl}/wp-admin/admin-ajax.php?action=ajax-collection`)
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
       xhr.send(encodeURI(`pagination=${pagination}`))
       xhr.onload = () => {

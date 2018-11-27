@@ -29,12 +29,13 @@ const popupTips = () => {
   // Tips page
   const contentTips = document.querySelector('#content.tips')
   if (contentTips) {
+    const homeUrl  = document.body.dataset.home
     const cardTips = Array.from(contentTips.querySelectorAll('.card-tips'))
 
     for (const cardTip of cardTips) {
       cardTip.addEventListener('click', () => {
         const xhr = new XMLHttpRequest()
-        xhr.open('POST', `../wp-admin/admin-ajax.php?action=ajax-tips`)
+        xhr.open('POST', `${homeUrl}/wp-admin/admin-ajax.php?action=ajax-tips`)
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
         xhr.send(encodeURI(`id=${cardTip.dataset.id}`))
         xhr.onload = () => {
