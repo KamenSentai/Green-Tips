@@ -7,6 +7,6 @@
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class(); ?> data-home="<?= get_home_url(); ?>">
+    <body <?php body_class(); ?> data-home="<?= get_home_url(); ?>" data-images="<?= IMAGES_URL; ?>">
     <div class="page">
     <?php include 'layouts/header.php'; ?>

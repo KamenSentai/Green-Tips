@@ -60,7 +60,7 @@
                          echo wp_get_attachment_image( $image, $size );
                      }
                      else{
-                      echo "<img src=\"localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/logo.svg\">";
+                      echo IMAGES_URL . "/logo.svg\">";
                      }?>
         </div>
       </div>

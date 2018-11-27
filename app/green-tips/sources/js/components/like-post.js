@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 	***************************************/
 	$(".like").stop().click(function(){
 
-		var rel = $(this).attr("rel");
+		var rel = $(this).attr("rel")
 
 		var data = {
 			data: rel,
@@ -20,18 +20,19 @@ jQuery(document).ready(function($) {
 			data: data,
 			success: function(data){
 
-				console.log(data.likes);
-				console.log(data.status);
+				console.log(data.likes)
+				console.log(data.status)
+				const imagesUrl = document.body.dataset.images
 
 				if(data.status == true){
-					$(".like[rel="+rel+"]").html(data.likes + "<img src=\"http://localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/valentines-heart.svg\">").addClass("liked");
+					$(".like[rel="+rel+"]").html(data.likes + `<img src="${imagesUrl}/valentines-heart.svg">`).addClass("liked")
 				}else{
-					$(".like[rel="+rel+"]").html(data.likes + "<img src=\"http://localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/heart.svg\">").removeClass("liked");
+					$(".like[rel="+rel+"]").html(data.likes + `<img src="${imagesUrl}/heart.svg">`).removeClass("liked")
 				}
 
 			}
-		});
+		})
 
-	});
+	})
 
-});
+})
