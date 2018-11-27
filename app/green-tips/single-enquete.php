@@ -20,7 +20,7 @@ setPostViews(get_the_ID());?>
         <?php the_title();?>
         </h1>
         <div class="header__infos">
-          Par <?php echo get_the_author();?> | <?php echo getPostViews(get_the_ID()); ?> / <a class="like" rel="<?php echo $post->ID; ?>"><?php echo likeCount($post->ID); ?> likes</a>
+          Par <?php echo get_the_author();?> | <?php echo getPostViews(get_the_ID()); ?>
         </div>
       </div>
     </div>

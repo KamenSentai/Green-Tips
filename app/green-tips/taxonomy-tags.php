@@ -1,6 +1,3 @@
-<?php
-/* Template Name: Tips Page */
-?>
 <?php get_header();?>
 <main id="content" class="tips">
   <div class="container">
@@ -9,7 +6,7 @@
       <div class="col-12 col-md-3">
         <aside id="filters">
           <h2 class="filters__title">Filtres</h2>
-          <div class="filters-type__title">Tags</div>
+                    <div class="filters-type__title">Tags</div>
           <div class="filters-cat">
           <?php wp_nav_menu_no_ul_filter_tips(); ?>
           </div>
@@ -18,14 +15,10 @@
 
       <div class="col-12 col-md-8">
         <?php
-        $tips = array(
-          'post_type' => 'tips'
-        );
-        $the_query = new WP_Query( $tips );
         ?>
-        <?php if($the_query -> have_posts()): ?>
-          <?php while($the_query -> have_posts()): ?>
-            <?php $the_query -> the_post(); 
+        <?php if(have_posts()): ?>
+          <?php while(have_posts()): ?>
+            <?php the_post(); 
             
              ?>
             <div class="card-tips" data-id="<?php the_id();?>"> 

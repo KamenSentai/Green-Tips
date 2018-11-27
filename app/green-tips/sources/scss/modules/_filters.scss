@@ -69,14 +69,14 @@
     }
   }
 
-  .filters-cat-item {
+  li {
     display: flex;
 
     margin-top: 10px;
 
     align-items: center;
 
-    label {
+    a {
       font-size: 0.9em;
 
       margin-left: 10px;

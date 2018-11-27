@@ -29,8 +29,7 @@
             Lire la suite
             </a>
           <div class="tips-day-bottom-like">
-          <a class="like" rel="<?php echo $post->ID; ?>"><?php echo likeCount($post->ID); ?></a>
-            <img src="<?php echo THEME_URL; ?>/assets/images/like.svg">
+          <a class="like" rel="<?php echo $post->ID; ?>"><?php echo likeCount($post->ID); ?> <img src="<?php echo THEME_URL; ?>/assets/images/heart.svg"> </a>
           </div>
         </div>
       </div>

@@ -37,6 +37,14 @@ $labels = array(
     );
 
     register_post_type($post_type_enquete, $args );
+    $taxonomy = "enquetetags";
+    $object_type = array("enquete");
+    $args = array(
+        'label' => __( 'enquetetags' ),
+        'rewrite' => array( 'slug' => 'enquetetags' ),
+        'hierarchical' => true,
+    );
+    register_taxonomy( $taxonomy, $object_type, $args );
     
 }
 add_action( 'init', 'ajout_cpt_enquete' );

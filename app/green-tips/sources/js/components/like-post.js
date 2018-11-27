@@ -24,9 +24,9 @@ jQuery(document).ready(function($) {
 				console.log(data.status);
 
 				if(data.status == true){
-					$(".like[rel="+rel+"]").html(data.likes).addClass("liked");
+					$(".like[rel="+rel+"]").html(data.likes + "<img src=\"http://localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/valentines-heart.svg\">").addClass("liked");
 				}else{
-					$(".like[rel="+rel+"]").html(data.likes).removeClass("liked");
+					$(".like[rel="+rel+"]").html(data.likes + "<img src=\"http://localhost:8888/wordpress-climate/public/wp-content/themes/green-tips/assets/images/heart.svg\">").removeClass("liked");
 				}
 
 			}

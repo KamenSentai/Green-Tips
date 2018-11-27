@@ -63,6 +63,10 @@
   }
 
   .tips-day-bottom-like {
+    a{
+      display: flex;
+      align-items: center;
+    }
     font-family: $title;
     font-weight: 500;
 

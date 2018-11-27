@@ -6,7 +6,7 @@
 
 function add_like_metabox() {
 
-   $show_on = array('post', 'tips', 'enquete');
+   $show_on = array('tips', 'enquete');
    if(in_array(get_post_type(), $show_on)){
 
       add_meta_box(
@@ -14,8 +14,6 @@ function add_like_metabox() {
          'Likes',
          'render_like_metabox',
          get_post_type(),
-         'side',
-         'low',
          'tips',
          'enquete'
       );

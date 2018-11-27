@@ -6,31 +6,13 @@
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-12 col-md-3">
-        <aside id="filters">
-          <h2 class="filters__title">Filtres</h2>
-          <div class="filters-type__title">Popularité</div>
-          <div class="filters-popular">
-            <div class="filters-popular-item">
-              <input type="radio" id="popular-views" name="popular">
-              <label for="popular-views">Vues</label>
-            </div>
-            <div class="filters-popular-item">
-              <input type="radio" id="popular-liked" name="popular">
-              <label for="popular-liked">Aimées</label>
-            </div>
-          </div>
-          <div class="filters-type__title">Catégories</div>
-          <div class="filters-cat">
-            <div class="filters-cat-item">
-              <input type="checkbox" id="cat-energy" name="cat">
-              <label for="cat-energy">Énergies</label>
-            </div>
-            <div class="filters-cat-item">
-              <input type="checkbox" id="cat-environment" name="cat">
-              <label for="cat-environment">Environnement</label>
-            </div>
-          </div>
-        </aside>
+      <aside id="filters">
+      <h2 class="filters__title">Filtres</h2>
+      <div class="filters-type__title">Tags</div>
+      <div class="filters-cat">
+        <?php wp_nav_menu_no_ul_filter_enquetes();?>
+      </div>
+    </aside>
       </div>
       <div class="col-12 col-md-8">
         <section id="enquetes">
