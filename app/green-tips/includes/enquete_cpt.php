@@ -37,11 +37,11 @@ $labels = array(
     );
 
     register_post_type($post_type_enquete, $args );
-    $taxonomy = "enquetetags";
+    $taxonomy = "enquetestags";
     $object_type = array("enquete");
     $args = array(
-        'label' => __( 'enquetetags' ),
-        'rewrite' => array( 'slug' => 'enquetetags' ),
+        'label' => __( 'enquetestags' ),
+        'rewrite' => array( 'slug' => 'enquetestags' ),
         'hierarchical' => true,
     );
     register_taxonomy( $taxonomy, $object_type, $args );

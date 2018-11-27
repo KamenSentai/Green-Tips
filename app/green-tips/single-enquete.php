@@ -10,7 +10,7 @@ setPostViews(get_the_ID());?>
       <div class="col-12 col-md-10">
         <div class="header-top">
           <div class="header-top__badge">
-          <?php the_terms( $post->ID, 'tags', '', ' / ' );?>
+          <?php the_terms( $post->ID, 'enquetestags', '', ' / ' );?>
           </div>
           <div class="header-top__date">
           <?php echo get_the_date();?>
