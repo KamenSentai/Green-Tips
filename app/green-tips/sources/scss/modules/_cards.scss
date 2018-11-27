@@ -66,11 +66,13 @@
   padding: 20px;
 
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.4s, transform 0.3s;
 
   box-shadow: 0 1px 4px $black;
 
   &:hover {
+    transform: translateY(-3px);
+
     box-shadow: 0 1px 7px $black;
   }
 
@@ -90,11 +92,11 @@
   }
 
   .card-tips__resume {
-    min-height: 60px;
-  
     font-size: 0.8em;
 
     position: relative;
+
+    min-height: 60px;
 
     &::before {
       position: absolute;
