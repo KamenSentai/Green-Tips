@@ -44,20 +44,19 @@ const popupTips = () => {
           contentTips.insertBefore(popupResponse.body, contentTips.firstChild)
           document.body.classList.add('popup-tips-active')
 
-          const popupTips        = document.querySelector('.popup-tips')
+          const popupBody        = contentTips.querySelector('.popup-body')
+          const popupTips        = popupBody.querySelector('.popup-tips')
           const popupTipsClose   = popupTips.querySelector('.popup-close')
           const popupTipsContent = popupTips.querySelector('.popup-tips-content')
 
           popupTipsClose.addEventListener('click', event => {
             event.preventDefault()
-            const popupBody = contentTips.querySelector('.popup-body')
             contentTips.removeChild(popupBody)
             document.body.classList.remove('popup-tips-active')
           })
 
           popupTips.addEventListener('click', event => {
             event.preventDefault()
-            const popupBody = contentTips.querySelector('.popup-body')
             contentTips.removeChild(popupBody)
             document.body.classList.remove('popup-tips-active')
           })
