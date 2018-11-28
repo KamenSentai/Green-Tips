@@ -14,32 +14,14 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="tips-day">
-        <h2 class="tips-day__title">
+        <h2 class="tips-day__section">
           Le tips du jour
         </h2>
-        <p class="tips-day__resume">
-          <b style="font-size:1.3em">
+        <h3 class="tips-day__title">
           <?php the_title();?>
-          </b>
-          <br /><br />
-          <?php
-          $field = get_field('tips_main_content');
-          $field = preg_replace(
-            '#((https?|ftp)://(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i',
-            "<a href=\"$1\" target=\"_blank\" alt=\"$3\">$3</a>$4",
-            $field
-          );
-          $words = explode(' ', $field);
-          $numberWords = 50;
-          for ($i = 0; $i < $numberWords; $i++) {
-            echo $words[$i];
-            if ($i == $numberWords) {
-              echo '...';
-            } else {
-              echo ' ';
-            }
-          }
-          ?>
+        </h3>
+        <p class="tips-day__resume">
+          <?php helper_concat_text(get_field('tips_main_content'), 75); ?>
         </p>
         <div class="tips-day-bottom">
           <a class="button-primary tips-day-bottom__more" href="#" title="<?php the_title();?>">
@@ -60,7 +42,7 @@
                          echo wp_get_attachment_image( $image, $size );
                      }
                      else{
-                      echo IMAGES_URL . "/logo.svg\">";
+                      echo "<img src=\"" . IMAGES_URL . "/logo.svg\">";
                      }?>
         </div>
       </div>

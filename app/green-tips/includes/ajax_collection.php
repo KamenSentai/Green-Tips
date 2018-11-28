@@ -17,11 +17,5 @@ function ajax_collection()
   $width_in_row = 4;
   include LAYOUTS_PATH . '/card.php';
 
-	// $tips = array(
-  //   'post_type' => 'tips',
-  // );
-  // $the_query = new WP_Query( $tips );
-	// include LAYOUTS_PATH . '/popup-tips.php';
-
   die();
 }
