@@ -116,7 +116,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
     img{
+      margin-left: 10px;
       width: 20px;
     }
   }

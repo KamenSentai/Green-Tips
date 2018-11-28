@@ -14,10 +14,7 @@
               </h2>
             </div>
             <div class="popup-tips__resume">
-              <?php
-              $field = helper_url_regex(get_field('tips_main_content'));
-              echo $field;
-              ?>
+              <?= helper_url_regex(get_field('tips_main_content')); ?>
             </div>
             <div class="popup-tips__image">
               <?php
