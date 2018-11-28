@@ -54,6 +54,8 @@
                 }
                 ?>
               </p>
+              <div class="card-tips__like">           <a class="like" rel="<?php echo $post->ID; ?>"><?php echo likeCount($post->ID); ?> <img src="<?php echo THEME_URL; ?>/assets/images/heart.svg"> </a>
+</div>
             </div>
           <?php endwhile; ?>
         <?php else: echo "no result"; ?>

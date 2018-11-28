@@ -1,6 +1,3 @@
-<?php 
-/* Template Name: Legal Mentions */ 
-?>
 <?php get_header(); ?>
 <main id="content" class="page-all" >
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
