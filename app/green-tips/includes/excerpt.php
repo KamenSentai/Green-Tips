@@ -1,4 +1,5 @@
 <?php
+
 function wpdocs_custom_excerpt_length( $length ) {
     return 25;
 }

@@ -3,8 +3,7 @@
 add_action('wp_ajax_ajax-collection', 'ajax_collection');
 add_action('wp_ajax_nopriv_ajax-collection', 'ajax_collection');
 
-function ajax_collection()
-{
+function ajax_collection() {
   global $wpdb, $_POST;
   $pagination = $_POST['pagination'];
 
