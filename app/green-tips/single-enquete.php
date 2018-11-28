@@ -31,7 +31,7 @@ setPostViews(get_the_ID());?>
   <div class="row justify-content-center">
     <div class="col-11 col-md-10">
       <div class="resume">
-      <?php the_content();?>
+      <?php the_content(); ?>
       </div>
     </div>
   </div>
