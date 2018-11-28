@@ -37,6 +37,8 @@
               <p class="card-tips__resume">
                 <?php helper_concat_text(get_field('tips_main_content'), 50); ?>
               </p>
+              <div class="card-tips__like">           <a class="like" rel="<?php echo $post->ID; ?>"><?php echo likeCount($post->ID); ?> <img src="<?php echo THEME_URL; ?>/assets/images/heart.svg"> </a>
+</div>
             </div>
           <?php endwhile; ?>
         <?php else: echo "no result"; ?>
