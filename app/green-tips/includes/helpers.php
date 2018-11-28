@@ -1,8 +1,8 @@
 <?php
 
 function helper_url_regex($url) {
-  $regex = '@(http(s)?)?(://)?(([a-zA-Z])([-\w]+\.)+([^\s\.]+[^\s]*)+[^,.\s])@';
-  return preg_replace($regex, '<a href="http$2://$4" target="_blank" title="$0">$0</a>', $url);
+  $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+  return preg_replace($regex, '<a href="$0" target="_blank" title="$2.$3">$2.$3</a>', $url);
 }
 
 function helper_concat_text($text, $number = 0) {
