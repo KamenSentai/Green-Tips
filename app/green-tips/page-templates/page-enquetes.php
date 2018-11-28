@@ -28,9 +28,11 @@
               include LAYOUTS_PATH . '/card.php';
               ?>
             </div>
-            <div class="collection-more">
-              <a href="#" class="button-primary button-primary--sub" data-posts="enquetes" data-pagination="1" data-pages="<?= $max_page; ?>">Voir plus</a>
-            </div>
+            <?php if ($max_page > 1): ?>
+              <div class="collection-more">
+                <a href="#" class="button-primary button-primary--sub" data-posts="enquetes" data-pagination="1" data-pages="<?= $max_page; ?>">Voir plus</a>
+              </div>
+            <?php endif; ?>
           </div>
         </section>
       </div>
