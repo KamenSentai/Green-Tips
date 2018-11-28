@@ -17,14 +17,19 @@
       <div class="col-12 col-md-8">
         <section id="enquetes">
           <div class="container-fluid">
-            <div class="row">
+            <div class="row cards-list">
               <?php $enquetes = array(
                 'post_type' => 'enquete',
+                'posts_per_page' => 6,
               );
               $the_query = new WP_Query( $enquetes );
+              $max_page  = $the_query->max_num_pages;
               $width_in_row = 6;
               include LAYOUTS_PATH . '/card.php';
               ?>
+            </div>
+            <div class="collection-more">
+              <a href="#" class="button-primary button-primary--sub" data-posts="enquetes" data-pagination="1" data-pages="<?= $max_page; ?>">Voir plus</a>
             </div>
           </div>
         </section>

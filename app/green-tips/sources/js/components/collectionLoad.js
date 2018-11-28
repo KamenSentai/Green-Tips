@@ -26,7 +26,31 @@ const collectionLoad = () => {
         collectionMore.removeChild(buttonCollection)
       }
     })
-	}
+	} else if (collectionMore) {
+    const cardsList = document.querySelector('.cards-list')
+    const button    = collectionMore.querySelector('a')
+    const homeUrl   = document.body.dataset.home
+    const posts     = button.dataset.posts
+		let pagination  = button.dataset.pagination
+    let maxPages    = button.dataset.pages
+
+    button.addEventListener('click', (event) => {
+      event.preventDefault()
+      pagination++
+
+      const xhr = new XMLHttpRequest()
+      xhr.open('POST', `${homeUrl}/wp-admin/admin-ajax.php?action=ajax-${posts}`)
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+      xhr.send(encodeURI(`pagination=${pagination}`))
+      xhr.onload = () => {
+        cardsList.innerHTML = cardsList.innerHTML + xhr.responseText
+      }
+
+      if (pagination == maxPages) {
+        collectionMore.removeChild(button)
+      }
+    })
+  }
 }
 
 export { collectionLoad }

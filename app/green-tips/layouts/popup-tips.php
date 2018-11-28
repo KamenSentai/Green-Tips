@@ -14,7 +14,7 @@
               </h2>
             </div>
             <div class="popup-tips__resume">
-              <?= helper_url_regex(get_field('tips_main_content')); ?>
+              <?php helper_concat_text(get_field('tips_main_content')); ?>
             </div>
             <div class="popup-tips__image">
               <?php

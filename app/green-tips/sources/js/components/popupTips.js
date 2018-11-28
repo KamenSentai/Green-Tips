@@ -38,7 +38,7 @@ const popupTips = () => {
         if (!isOpened) {
           isOpened  = true
           const xhr = new XMLHttpRequest()
-          xhr.open('POST', `${homeUrl}/wp-admin/admin-ajax.php?action=ajax-tips`)
+          xhr.open('POST', `${homeUrl}/wp-admin/admin-ajax.php?action=ajax-popup`)
           xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
           xhr.send(encodeURI(`id=${cardTip.dataset.id}`))
           xhr.onload = () => {

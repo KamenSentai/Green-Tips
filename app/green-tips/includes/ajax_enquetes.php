@@ -1,9 +1,9 @@
 <?php
 
-add_action('wp_ajax_ajax-tips', 'ajax_tips');
-add_action('wp_ajax_nopriv_ajax-tips', 'ajax_tips');
+add_action('wp_ajax_ajax-enquetes', 'ajax_enquetes');
+add_action('wp_ajax_nopriv_ajax-enquetes', 'ajax_enquetes');
 
-function ajax_tips() {
+function ajax_enquetes() {
   global $wpdb, $_POST;
   $pagination = $_POST['pagination'];
 
@@ -13,7 +13,8 @@ function ajax_tips() {
     'paged' => $pagination,
   );
   $the_query = new WP_Query( $enquetes );
-  include LAYOUTS_PATH . '/card-tips.php';
+  $width_in_row = 6;
+  include LAYOUTS_PATH . '/card.php';
 
   die();
 }

@@ -7,9 +7,12 @@ function helper_url_regex($url) {
 
 function helper_concat_text($text, $number = 0) {
   $words = explode(' ', $text);
+  $total = count($words);
+  if ($number == 0) $number = $total;
   for ($i = 0; $i < $number; $i++) {
     echo helper_url_regex($words[$i]);
-    if ($i == $number) echo '...';
+    if ($i == $number && $i != $total) echo '...';
+    elseif ($i == $total) echo '';
     else echo ' ';
   }
 }
