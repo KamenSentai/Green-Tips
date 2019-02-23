@@ -1,3 +1,9 @@
-import Test from './components/Test'
+import { popupPublishTips } from './components/popupPublishTips'
+import { popupTips }        from './components/popupTips'
+import { collectionLoad }   from './components/collectionLoad'
 
-new Test()
+import "./components/like-post"
+
+popupPublishTips()
+popupTips()
+collectionLoad()

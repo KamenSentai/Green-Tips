@@ -1,0 +1,95 @@
+// in body class
+.popup-publish-tips-active {
+  overflow: hidden;
+
+  .popup-publish-tips {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    &::before {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      content: '';
+
+      background-color: rgba(#000000, 0.7);
+    }
+  }
+
+  .popup-publish-tips-content {
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 90vh;
+    height: 70vh;
+
+    background-color: #ffffff;
+
+    align-items: center;
+
+    .title {
+      font-family: $title;
+      font-size: 1.1em;
+      font-weight: 500;
+
+      margin-top: 20px;
+
+      text-align: center;
+    }
+
+    .popup-close img {
+      position: absolute;
+      z-index: 5;
+      top: 10px;
+      right: 10px;
+
+      width: 25px;
+      height: 25px;
+
+      cursor: pointer;
+    }
+  }
+
+  .popup-publish-tips-infos {
+    overflow-y: scroll;
+
+    width: 90%;
+    height: 100%;
+  }
+
+
+  .acf-form-submit {
+    display: flex;
+
+    margin-bottom: 20px;
+
+    justify-content: center;
+  }
+
+  .acf-field {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  .acf-field input[type='text'],
+  .acf-field input[type='number'],
+  .acf-field textarea {
+    width: 100%;
+  }
+}

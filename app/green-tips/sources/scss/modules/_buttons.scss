@@ -1,0 +1,28 @@
+.button-primary {
+  display: inline-block;
+
+  padding: 10px 15px;
+
+  cursor: pointer;
+  transition: 0.2s;
+
+  color: $white;
+  background-color: $limeade;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--sub {
+    text-transform: uppercase;
+
+    color: $limeade;
+    background-color: $white;
+    border: 2px solid $limeade;
+
+    &:hover {
+      color: $white;
+      background-color: $limeade;
+    }
+  }
+}

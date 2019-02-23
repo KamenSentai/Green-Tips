@@ -1,0 +1,30 @@
+body {
+  font-family: $text;
+
+  color: $black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  word-break: break-word;
+
+  color: $limeade;
+}
+
+input,
+textarea {
+  padding: 5px;
+
+  border: 1px solid #e6e6e6;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #b1b1b1;
+  outline-style: none;
+}
