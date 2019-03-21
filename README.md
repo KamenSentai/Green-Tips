@@ -3,6 +3,12 @@
 ## Theme
 Name : Green Tips
 
+## Technologies
+- WordPress
+- ES6
+- SCSS
+- Gulp
+
 ## Team
 - Théodore Morio : Project manager
 - Bryan Chung : UX/UI design
